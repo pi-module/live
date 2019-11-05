@@ -15,7 +15,7 @@ return [
     'meta'     => [
         'title'       => _a('Live'),
         'description' => _a('Live stream'),
-        'version'     => '0.0.4',
+        'version'     => '0.0.5',
         'license'     => 'New BSD',
         'logo'        => 'image/logo.png',
         'readme'      => 'docs/readme.txt',

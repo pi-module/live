@@ -13,8 +13,8 @@
 return [
     'category' => [
         [
-            'title' => _a('Admin'),
-            'name'  => 'admin',
+            'title' => _a('Stream'),
+            'name'  => 'stream',
         ],
 
         [
@@ -23,9 +23,17 @@ return [
         ],
     ],
     'item'     => [
-        // Admin
+        // stream
+        'http' => [
+            'category'    => 'stream',
+            'title'       => _a('Http URL'),
+            'description' => '',
+            'edit'        => 'text',
+            'filter'      => 'string',
+            'value'       => '',
+        ],
         'low' => [
-            'category'    => 'admin',
+            'category'    => 'stream',
             'title'       => _a('Low public point'),
             'description' => '',
             'edit'        => 'text',
@@ -33,7 +41,7 @@ return [
             'value'       => '',
         ],
         'medium' => [
-            'category'    => 'admin',
+            'category'    => 'stream',
             'title'       => _a('Medium public point'),
             'description' => '',
             'edit'        => 'text',
@@ -41,7 +49,7 @@ return [
             'value'       => '',
         ],
         'high' => [
-            'category'    => 'admin',
+            'category'    => 'stream',
             'title'       => _a('High public point'),
             'description' => '',
             'edit'        => 'text',
