@@ -50,7 +50,7 @@ return [
         ],
 
         // View
-        'title' => [
+        'page_title' => [
             'category'    => 'view',
             'title'       => _a('Page title'),
             'description' => '',
@@ -58,7 +58,7 @@ return [
             'filter'      => 'string',
             'value'       => '',
         ],
-        'description'    => [
+        'page_description'    => [
             'category'    => 'view',
             'title'       => _a('Description'),
             'description' => '',

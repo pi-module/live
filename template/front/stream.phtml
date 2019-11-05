@@ -6,17 +6,19 @@
             'type'   => 'hls',
         ]
     ); ?>
-    <?php if (isset($config['title']) && !empty($config['title'])) { ?>
+    <?php if (!empty($config['page_title']) || !empty($config['page_description'])) { ?>
         <div class="card mb-3 mt-3">
-            <div class="card-header">
-                <div class="card-title">
-                    <h1><?php echo $config['title']; ?></h1>
+            <?php if (!empty($config['page_title'])) { ?>
+                <div class="card-header bg-transparent">
+                    <div class="card-title">
+                        <h1><?php echo $config['page_title']; ?></h1>
+                    </div>
                 </div>
-            </div>
-            <?php if (isset($config['description']) && !empty($config['description'])) { ?>
+            <?php } ?>
+            <?php if (!empty($config['page_description'])) { ?>
                 <div class="card-body">
                     <div class="card-text">
-                        <?php echo $config['description']; ?>
+                        <?php echo $config['page_description']; ?>
                     </div>
                 </div>
             <?php } ?>
