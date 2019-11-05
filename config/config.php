@@ -24,7 +24,7 @@ return [
     ],
     'item'     => [
         // stream
-        'http' => [
+        'http'             => [
             'category'    => 'stream',
             'title'       => _a('Http URL'),
             'description' => '',
@@ -32,7 +32,7 @@ return [
             'filter'      => 'string',
             'value'       => '',
         ],
-        'low' => [
+        'low'              => [
             'category'    => 'stream',
             'title'       => _a('Low public point'),
             'description' => '',
@@ -40,7 +40,7 @@ return [
             'filter'      => 'string',
             'value'       => '',
         ],
-        'medium' => [
+        'medium'           => [
             'category'    => 'stream',
             'title'       => _a('Medium public point'),
             'description' => '',
@@ -48,7 +48,7 @@ return [
             'filter'      => 'string',
             'value'       => '',
         ],
-        'high' => [
+        'high'             => [
             'category'    => 'stream',
             'title'       => _a('High public point'),
             'description' => '',
@@ -58,7 +58,7 @@ return [
         ],
 
         // View
-        'page_title' => [
+        'page_title'       => [
             'category'    => 'view',
             'title'       => _a('Page title'),
             'description' => '',
@@ -66,7 +66,7 @@ return [
             'filter'      => 'string',
             'value'       => '',
         ],
-        'page_description'    => [
+        'page_description' => [
             'category'    => 'view',
             'title'       => _a('Description'),
             'description' => '',

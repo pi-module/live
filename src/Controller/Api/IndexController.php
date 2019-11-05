@@ -23,12 +23,12 @@ class IndexController extends ActionController
         // Set default result
         $result = [
             'result' => false,
-            'data'    => [],
-            'error'   => [
-                'code'    => 1,
-                'message' => __('Nothing selected'),
+            'data'   => [],
+            'error'  => [
+                'code'        => 1,
+                'message'     => __('Nothing selected'),
                 'messageFlag' => false,
-            ]
+            ],
         ];
 
         // Get info from url
@@ -55,8 +55,8 @@ class IndexController extends ActionController
             // Set default result
             $result = [
                 'result' => true,
-                'data'    => $source,
-                'error'   => []
+                'data'   => $source,
+                'error'  => [],
             ];
 
         } else {

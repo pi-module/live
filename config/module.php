@@ -31,6 +31,6 @@ return [
     ],
     // Resource
     'resource' => [
-        'config'     => 'config.php',
+        'config' => 'config.php',
     ],
 ];
