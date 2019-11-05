@@ -1,0 +1,25 @@
+<?php $this->css($this->assetModule('css/front.css')); ?>
+<div class="clearfix mb-3">
+    <?php echo $this->video(
+        [
+            'source' => $source,
+            'type'   => 'hls',
+        ]
+    ); ?>
+    <?php if (isset($config['title']) && !empty($config['title'])) { ?>
+        <div class="card mb-3 mt-3">
+            <div class="card-header">
+                <div class="card-title">
+                    <h1><?php echo $config['title']; ?></h1>
+                </div>
+            </div>
+            <?php if (isset($config['description']) && !empty($config['description'])) { ?>
+                <div class="card-body">
+                    <div class="card-text">
+                        <?php echo $config['description']; ?>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    <?php } ?>
+</div>
