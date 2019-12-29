@@ -2,8 +2,9 @@
 <div class="clearfix mb-3">
     <?php echo $this->video(
         [
-            'source' => $source,
-            'type'   => 'hls',
+            'source'   => $source,
+            'type'     => 'hls',
+            'mimetype' => 'application/x-mpegURL',
         ]
     ); ?>
     <?php if (!empty($config['page_title']) || !empty($config['page_description'])) { ?>

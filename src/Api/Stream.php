@@ -27,20 +27,32 @@ class Stream extends AbstractApi
         // Get config
         $config = Pi::service('registry')->config->read($this->getModule());
 
-        $source = [
-            'low'    => [
+        // Set source
+        $source = [];
+
+        // Check quality
+        if (isset($config['low']) && !empty($config['low'])) {
+            $source['low'] = [
                 'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['low']),
                 'title' => __('Low quality'),
-            ],
-            'medium' => [
+            ];
+        }
+
+        // Check quality
+        if (isset($config['medium']) && !empty($config['medium'])) {
+            $source['medium'] = [
                 'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['medium']),
                 'title' => __('Medium quality'),
-            ],
-            'high'   => [
+            ];
+        }
+
+        // Check quality
+        if (isset($config['high']) && !empty($config['high'])) {
+            $source['high'] = [
                 'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['high']),
                 'title' => __('High quality'),
-            ],
-        ];
+            ];
+        }
 
         return $source;
     }
