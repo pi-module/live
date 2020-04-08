@@ -56,6 +56,13 @@ return [
             'filter'      => 'string',
             'value'       => '',
         ],
+        'hls_mime_type'    => [
+            'category' => 'stream',
+            'title'    => _a('Mime type for HLS video'),
+            'edit'     => 'text',
+            'filter'   => 'string',
+            'value'    => 'application/x-mpegURL',
+        ],
 
         // View
         'page_title'       => [

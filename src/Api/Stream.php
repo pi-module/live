@@ -30,28 +30,55 @@ class Stream extends AbstractApi
         // Set source
         $source = [];
 
-        // Check quality
-        if (isset($config['low']) && !empty($config['low'])) {
-            $source['low'] = [
-                'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['low']),
-                'title' => __('Low quality'),
-            ];
-        }
+        // Check http url
+        if (empty($config['http'])) {
+            // Check quality
+            if (isset($config['low']) && !empty($config['low'])) {
+                $source['low'] = [
+                    'url'   => $config['low'],
+                    'title' => __('Low quality'),
+                ];
+            }
 
-        // Check quality
-        if (isset($config['medium']) && !empty($config['medium'])) {
-            $source['medium'] = [
-                'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['medium']),
-                'title' => __('Medium quality'),
-            ];
-        }
+            // Check quality
+            if (isset($config['medium']) && !empty($config['medium'])) {
+                $source['medium'] = [
+                    'url'   => $config['medium'],
+                    'title' => __('Medium quality'),
+                ];
+            }
 
-        // Check quality
-        if (isset($config['high']) && !empty($config['high'])) {
-            $source['high'] = [
-                'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['high']),
-                'title' => __('High quality'),
-            ];
+            // Check quality
+            if (isset($config['high']) && !empty($config['high'])) {
+                $source['high'] = [
+                    'url'   => $config['high'],
+                    'title' => __('High quality'),
+                ];
+            }
+        } else {
+            // Check quality
+            if (isset($config['low']) && !empty($config['low'])) {
+                $source['low'] = [
+                    'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['low']),
+                    'title' => __('Low quality'),
+                ];
+            }
+
+            // Check quality
+            if (isset($config['medium']) && !empty($config['medium'])) {
+                $source['medium'] = [
+                    'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['medium']),
+                    'title' => __('Medium quality'),
+                ];
+            }
+
+            // Check quality
+            if (isset($config['high']) && !empty($config['high'])) {
+                $source['high'] = [
+                    'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['high']),
+                    'title' => __('High quality'),
+                ];
+            }
         }
 
         return $source;

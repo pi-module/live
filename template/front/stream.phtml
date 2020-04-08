@@ -1,12 +1,18 @@
 <?php $this->css($this->assetModule('css/front.css')); ?>
 <div class="clearfix mb-3">
+    <?php if (!empty($source)) { ?>
     <?php echo $this->video(
         [
             'source'   => $source,
             'type'     => 'hls',
-            'mimetype' => 'application/x-mpegURL',
+            'mimetype' => $config['hls_mime_type'],
         ]
     ); ?>
+    <?php } else { ?>
+        <div class="alert alert-danger">
+            <?php _e('No video source set !'); ?>
+        </div>
+    <?php } ?>
     <?php if (!empty($config['page_title']) || !empty($config['page_description'])) { ?>
         <div class="card mb-3 mt-3">
             <?php if (!empty($config['page_title'])) { ?>
