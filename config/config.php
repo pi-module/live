@@ -24,17 +24,9 @@ return [
     ],
     'item'     => [
         // stream
-        'http'             => [
-            'category'    => 'stream',
-            'title'       => _a('Http URL'),
-            'description' => '',
-            'edit'        => 'text',
-            'filter'      => 'string',
-            'value'       => '',
-        ],
         'low'              => [
             'category'    => 'stream',
-            'title'       => _a('Low public point'),
+            'title'       => _a('Low stream url'),
             'description' => '',
             'edit'        => 'text',
             'filter'      => 'string',
@@ -42,7 +34,7 @@ return [
         ],
         'medium'           => [
             'category'    => 'stream',
-            'title'       => _a('Medium public point'),
+            'title'       => _a('Medium stream url'),
             'description' => '',
             'edit'        => 'text',
             'filter'      => 'string',
@@ -50,7 +42,7 @@ return [
         ],
         'high'             => [
             'category'    => 'stream',
-            'title'       => _a('High public point'),
+            'title'       => _a('High stream url'),
             'description' => '',
             'edit'        => 'text',
             'filter'      => 'string',
@@ -62,6 +54,22 @@ return [
             'edit'     => 'text',
             'filter'   => 'string',
             'value'    => 'application/x-mpegURL',
+        ],
+        'logo'             => [
+            'category'    => 'stream',
+            'title'       => _a('Player logo'),
+            'description' => '',
+            'edit'        => 'text',
+            'filter'      => 'string',
+            'value'       => '',
+        ],
+        'poster'             => [
+            'category'    => 'stream',
+            'title'       => _a('Player poster'),
+            'description' => '',
+            'edit'        => 'text',
+            'filter'      => 'string',
+            'value'       => '',
         ],
 
         // View

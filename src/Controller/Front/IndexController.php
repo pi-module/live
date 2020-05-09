@@ -26,8 +26,8 @@ class IndexController extends ActionController
         // Get config
         $config = Pi::service('registry')->config->read($module);
 
-        // Set source
-        $source = Pi::api('stream', 'live')->source();
+        // Set player
+        $player = Pi::api('stream', 'live')->player();
 
         // Save statistics
         if (Pi::service('module')->isActive('statistics')) {
@@ -42,6 +42,6 @@ class IndexController extends ActionController
         // Set view
         $this->view()->setTemplate('stream');
         $this->view()->assign('config', $config);
-        $this->view()->assign('source', $source);
+        $this->view()->assign('player', $player);
     }
 }

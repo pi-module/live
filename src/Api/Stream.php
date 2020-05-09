@@ -17,70 +17,58 @@ use Pi;
 use Pi\Application\Api\AbstractApi;
 
 /*
- * Pi::api('stream', 'live')->source();
+ * Pi::api('stream', 'live')->player();
  */
 
 class Stream extends AbstractApi
 {
-    public function source()
+    public function player()
     {
         // Get config
         $config = Pi::service('registry')->config->read($this->getModule());
 
-        // Set source
-        $source = [];
+        // Set player
+        $player = [];
 
-        // Check http url
-        if (empty($config['http'])) {
-            // Check quality
-            if (isset($config['low']) && !empty($config['low'])) {
-                $source['low'] = [
-                    'url'   => $config['low'],
-                    'title' => __('Low quality'),
-                ];
+        // Check quality
+        if (isset($config['low']) && !empty($config['low'])) {
+            $player['source']['low'] = [
+                'url'   => $config['low'],
+                'title' => __('Low quality'),
+            ];
+        }
+
+        // Check quality
+        if (isset($config['medium']) && !empty($config['medium'])) {
+            $player['source']['medium'] = [
+                'url'   => $config['medium'],
+                'title' => __('Medium quality'),
+            ];
+        }
+
+        // Check quality
+        if (isset($config['high']) && !empty($config['high'])) {
+            $player['source']['high'] = [
+                'url'   => $config['high'],
+                'title' => __('High quality'),
+            ];
+        }
+
+        // Set player
+        if (!empty($player['source'])) {
+
+            $player['type']     = 'hls';
+            $player['mimetype'] = $config['hls_mime_type'];
+
+            if (isset($config['poster']) && !empty($config['poster'])) {
+                $player['layout']['posterImage'] = $config['poster'];
             }
 
-            // Check quality
-            if (isset($config['medium']) && !empty($config['medium'])) {
-                $source['medium'] = [
-                    'url'   => $config['medium'],
-                    'title' => __('Medium quality'),
-                ];
-            }
-
-            // Check quality
-            if (isset($config['high']) && !empty($config['high'])) {
-                $source['high'] = [
-                    'url'   => $config['high'],
-                    'title' => __('High quality'),
-                ];
-            }
-        } else {
-            // Check quality
-            if (isset($config['low']) && !empty($config['low'])) {
-                $source['low'] = [
-                    'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['low']),
-                    'title' => __('Low quality'),
-                ];
-            }
-
-            // Check quality
-            if (isset($config['medium']) && !empty($config['medium'])) {
-                $source['medium'] = [
-                    'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['medium']),
-                    'title' => __('Medium quality'),
-                ];
-            }
-
-            // Check quality
-            if (isset($config['high']) && !empty($config['high'])) {
-                $source['high'] = [
-                    'url'   => sprintf('%s/%s/playlist.m3u8', $config['http'], $config['high']),
-                    'title' => __('High quality'),
-                ];
+            if (isset($config['logo']) && !empty($config['logo'])) {
+                $player['layout']['logo']['imageUrl'] = $config['logo'];
             }
         }
 
-        return $source;
+        return $player;
     }
 }

@@ -1,13 +1,7 @@
 <?php $this->css($this->assetModule('css/front.css')); ?>
 <div class="clearfix mb-3">
-    <?php if (!empty($source)) { ?>
-    <?php echo $this->video(
-        [
-            'source'   => $source,
-            'type'     => 'hls',
-            'mimetype' => $config['hls_mime_type'],
-        ]
-    ); ?>
+    <?php if (isset($player) && !empty($player)) { ?>
+        <?php echo $this->video($player); ?>
     <?php } else { ?>
         <div class="alert alert-danger">
             <?php _e('No video source set !'); ?>
