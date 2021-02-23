@@ -30,7 +30,7 @@ class IndexController extends ActionController
         $player = Pi::api('stream', 'live')->player();
 
         // Set view
-        $this->view()->setTemplate('live:front/stream');
+        $this->view()->setTemplate('stream');
         $this->view()->assign('config', $config);
         $this->view()->assign('player', $player);
     }
